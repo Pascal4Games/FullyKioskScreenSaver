@@ -19,13 +19,18 @@ Have a good one!
 1. Fork the repository.
 2. Customize the index.html file as you like. It includes multiple language options for the days (the original version is in Croatian).
 3. Access the below mentioned URL and use it as your source.
+
+Orginal post:
+
+[https://github.com/mariosemes/SimpleClockWithDateForScreenSaver](https://github.com/mariosemes/SimpleClockWithDateForScreenSaver)
+
 ```
 
 ## The URL
 ```
-https://raw.githack.com/mariosemes/<your-repository-name>/<branch>/index.html
+https://raw.githack.com/<your-name>/<your-repository-name>/<branch>/index.html
 ```
-In this repos case:
+In orginal repos case:
 
 [https://raw.githack.com/mariosemes/SimpleClockWithDateForScreenSaver/main/index.html](https://raw.githack.com/mariosemes/SimpleClockWithDateForScreenSaver/main/index.html
 )
@@ -35,7 +40,5 @@ Feel free to visit this URL and check out the CLOCK <3
 ## Features
 
 ```
-1. To avoid AMOLED burn-ins, I added a simple script that will change the space between the TIME and DATE every 5 minutes. Feel free to change that too.
-2. Thanks to a reddit comment, I added a free weather widget at the top by default. You can of course COMMENT IT OUT inside your forked index.html file...
-3. Still polishing :)
+1. To avoid AMOLED burn-ins, I edit file that move random. For orginal developer see above.
 ```
