@@ -20,15 +20,21 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+			user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
         }
+		.clock-container {
+			position: absolute;
+			/* transition: top 1s ease, left 1s ease; *//* If you want a animation */
+			text-align: center;
+		}
         .clock {
             font-size: 15vw; /* Font size scales with viewport width */
-            margin-bottom: 0rem;
             font-weight: 600;
         }
         .date {
             font-size: 4vw; /* Font size scales with viewport width */
-            margin-bottom: 0rem;
             font-weight: 600;
         }
 
@@ -51,8 +57,10 @@
     Weather block Ends -->
 
 
-    <div class="clock" id="clock"></div>
-    <div class="date" id="date"></div>
+    <div class="clock-container" id="clockContainer">
+		<div class="clock" id="clock"></div>
+		<div class="date" id="date"></div>
+	</div>
 
     <script>
         function updateTime() {
@@ -98,38 +106,29 @@
             document.getElementById('clock').textContent = `${hours}:${minutes}`; //:${seconds}
             document.getElementById('date').textContent = `${day}, ${date}`;
         }
+		
+		function moveClockRandomly() {
+			const container = document.getElementById('clockContainer');
 
-        function toggleClockMargin() {
-            const clockElement = document.querySelector('.clock');
-            if (clockElement.style.marginBottom === '4rem') {
-                clockElement.style.marginBottom = '0rem';
-            } else {
-                clockElement.style.marginBottom = '4rem';
-            }
-        }
+			const viewportWidth = window.innerWidth;
+			const viewportHeight = window.innerHeight;
 
-        function toggleDateMargin() {
-            const dateElement = document.querySelector('.date');
-            if (dateElement.style.marginBottom === '4rem') {
-                dateElement.style.marginBottom = '0rem';
-            } else {
-                dateElement.style.marginBottom = '4rem';
-            }
-        }
+			const elementWidth = container.offsetWidth;
+			const elementHeight = container.offsetHeight;
 
-        function toggleWeatherPosition() {
-            const weatherElement = document.querySelector('.wlr');
-            if (weatherElement.style.top === '25px') {
-                weatherElement.style.top = '15px';
-            } else {
-                weatherElement.style.top = '25px';
-            }
-        }
+			const maxX = viewportWidth - elementWidth;
+			const maxY = viewportHeight - elementHeight;
+
+			const randomX = Math.random() * maxX;
+			const randomY = Math.random() * maxY;
+
+			container.style.left = `${randomX}px`;
+			container.style.top = `${randomY}px`;
+		}
 
         setInterval(updateTime, 1000);
-        setInterval(toggleClockMargin, 5 * 60 * 1000); // Toggle margin every 5 minutes
-        setInterval(toggleDateMargin, 5 * 60 * 1000); // Toggle margin every 5 minutes
-        // setInterval(toggleWeatherPosition, 5 * 60 * 1000); // Toggle margin every 5 minutes
+		setInterval(moveClockRandomly, 5 * 60 * 1000); // Toggle margin every 5 minutes
+		window.addEventListener('load', moveClockRandomly); // Initial call to random
         updateTime(); // Initial call to display immediately
     </script>
 </body>
