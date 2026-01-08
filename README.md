@@ -20,11 +20,10 @@ Have a good one!
 2. Customize the index.html file as you like. It includes multiple language options for the days (the original version is in Croatian).
 3. Access the below mentioned URL and use it as your source.
 
+```
 Orginal post:
 
 [https://github.com/mariosemes/SimpleClockWithDateForScreenSaver](https://github.com/mariosemes/SimpleClockWithDateForScreenSaver)
-
-```
 
 ## The URL
 ```
