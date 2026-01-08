@@ -87,8 +87,8 @@
             // const days = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
             //// Greek
             // const days = ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'];
-            // const day = days[now.getDay()];
-            // const date = now.toLocaleDateString('de-DE');
+            const day = days[now.getDay()];
+            const date = now.toLocaleDateString('nl-NL');
 
             document.getElementById('clock').textContent = `${hours}:${minutes}`; //:${seconds}
             document.getElementById('date').textContent = `${day}, ${date}`;
