@@ -90,8 +90,8 @@
             // const day = days[now.getDay()];
             // const date = now.toLocaleDateString('de-DE');
 
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-            // document.getElementById('date').textContent = `${day}, ${date}`;
+            document.getElementById('clock').textContent = `${hours}:${minutes}`; //:${seconds}
+            document.getElementById('date').textContent = `${day}, ${date}`;
         }
 
         function toggleClockMargin() {
@@ -100,6 +100,15 @@
                 clockElement.style.marginBottom = '0rem';
             } else {
                 clockElement.style.marginBottom = '4rem';
+            }
+        }
+
+        function toggleDateMargin() {
+            const dateElement = document.querySelector('.date');
+            if (dateElement.style.marginBottom === '4rem') {
+                dateElement.style.marginBottom = '0rem';
+            } else {
+                dateElement.style.marginBottom = '4rem';
             }
         }
 
@@ -114,6 +123,7 @@
 
         setInterval(updateTime, 1000);
         setInterval(toggleClockMargin, 5 * 60 * 1000); // Toggle margin every 5 minutes
+        setInterval(toggleDateMargin, 5 * 60 * 1000); // Toggle margin every 5 minutes
         // setInterval(toggleWeatherPosition, 5 * 60 * 1000); // Toggle margin every 5 minutes
         updateTime(); // Initial call to display immediately
     </script>
